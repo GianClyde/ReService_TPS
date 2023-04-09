@@ -1,0 +1,433 @@
+{%extends 'main.html'%}
+
+{% block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #left-wrapper{
+            background-color: #001c69;
+            width: 20%;
+            min-height: 1200px;
+            float: left;
+            padding: 0.5%;
+        }
+        #right-wrapper{
+
+            width: 80%;
+            float: right;
+            padding-top: 2%;
+
+            
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #reservice-header{
+            font-family: Signika;
+            color: #deaf39;
+            float: left;
+            font-size: 24px;
+            margin-top: 0.5%;
+
+            
+        }
+        #account-header{
+            font-family: Montserrat;
+            color: white;
+            float: right;
+            margin-top: 7px;
+            font-size: 20px;
+        }
+        #left-content{
+ 
+            width: 100%;
+            margin-top: 10%;
+            padding: 3%;
+        }
+        
+         #profileNav-icon-img{
+            width: 100%;
+            min-height: 27px;
+         }
+         .icon-profilePG{
+            float: left;
+            width: 15%;
+         }
+         .icon-titlePG{
+            float: right;
+            font-size: 20px;
+            font-family: Montserrat;
+            font-weight: bold;
+            color: white;
+        
+
+         }
+         #nav-profile{
+            
+            margin-bottom: 15%;
+
+         }
+
+         .profile-pic{
+            border-radius: 50%;
+            width: 100%;
+            margin-top: 3%;
+            
+         }
+         .parent {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+         #profile-picture{
+            min-height: 200px;
+            width: 100%;
+            border-bottom: solid#001c69;
+
+         }
+         #profile-name{
+            float: right;
+            margin-top: 5%;
+            margin-right: 45%;
+            font-family: Montserrat;
+            font-weight: bold;
+            font-size: 26px;
+
+            display: inline;
+
+         }
+         #profile-image{
+            float: left;
+
+            width: 10%;
+            min-height: 100px;
+            margin-left: 5%;
+            margin-bottom: 2%;
+         }
+         #profile-header{
+            margin-bottom: 1%;
+            font-family: Montserrat;
+            font-weight: 500;
+            font-size: 20px;
+            margin-left: 5%;
+         }
+         #name-wrapper{
+            padding-top: 3%;
+            padding-left: 2%;
+            padding-bottom: 2%;
+            padding-right: 3%;
+            border-bottom: solid#001c69;
+         }
+         .form-control{
+            font-family: Montserrat;
+            font-size: 18px;
+            margin-left: 5%;
+            margin-top: 1%;
+            padding: 1%;
+            width: 50%;
+            border-radius: 10px;
+            border: solid#001c69;
+
+         }
+         .form-input{
+            font-family: Montserrat;
+            font-size: 18px;
+            margin-left: 5%;
+            margin-top: 1%;
+            padding: 1%;
+            width: 50%;
+            border-radius: 10px;
+            border: solid#001c69;
+
+         }
+         #name-label{
+            font-family: Montserrat;
+            font-size: 20px;
+         }
+         #content-wrapper{
+            margin-bottom: 5%;
+         }
+        .child-left {
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #edit-btn{
+            float: right;
+            background-color: #deaf39;
+            color: white;
+            width: 10%;
+            min-height: 30px;
+            margin-right: 8%;
+            padding: 1%;
+            padding-left: 1.5%;
+            font-family: Montserrat;
+            font-size: 15px;
+            font-weight: bold;            
+        }
+        #save-btn{
+            background-color: #deaf39;
+            color: white;
+            font-family: Montserrat;
+            font-size: 15px;
+            font-weight: bold;   
+            border: none;
+            padding: 1%;
+            padding-left: 1.5%;
+            
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="profile-page-wrapper" class="parent">
+        <div id="left-wrapper" class="child-left">
+            <div style="margin-bottom: 10%;">
+                <div id="reservice-header">
+                    <h2 >ReService</h2>
+                </div>
+                <div id="account-header">
+                    <h2 >Account</h2>
+                </div>
+            </div>
+            
+            <br>
+            <div id="left-content">
+                <div class="clearfix" id="nav-profile" style="border-bottom: solid white;">
+                    <div class="icon-profilePG">
+                        <img id="profileNav-icon-img" src="{% static 'images/personalinf-icon.png' %}" /> 
+                    </div>
+                    <div class="icon-titlePG">
+                        <h3>Person Information</h3>
+                    </div>
+                </div>
+
+                <div class="clearfix" id="nav-profile">
+                    <div class="icon-profilePG">
+                        <img id="profileNav-icon-img" src="{% static 'images/security-icon.png' %}" /> 
+                    </div>
+                    <div class="icon-titlePG" style="padding-top: 5%; padding-right: 11%;">
+                        <h3>Security Settings</h3>
+                    </div>
+                </div>
+
+                <div class="clearfix" id="nav-profile">
+                    <div class="icon-profilePG">
+                        <img id="profileNav-icon-img" src="{% static 'images/bus-icon.png' %}" /> 
+                    </div>
+                    <div class="icon-titlePG" style="padding-top: 5%; padding-right: 20%;">
+                        <h3>Service Details</h3>
+                    </div>
+                </div>
+
+                <div class="clearfix" id="nav-profile">
+                    <div class="icon-profilePG">
+                        <img id="profileNav-icon-img" src="{% static 'images/payment-icon.png' %}" /> 
+                    </div>
+                    <div class="icon-titlePG" style="padding-right: 40%; ">
+                        <h3>Payments</h3>
+                    </div>
+                </div>
+                
+                <div class="clearfix" id="nav-profile">
+                    <div class="icon-profilePG">
+                        <img id="profileNav-icon-img" src="{% static 'images/about-icon.png' %}" /> 
+                    </div>
+                    <div class="icon-titlePG" style="padding-top: 3%; padding-right: 50%; ">
+                        <h3>About</h3>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- <a href="{% url 'change-password' %}">Change Password</a>-->
+        </div>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div id="right-wrapper" class="clearfix">
+                <div id="profile-picture" class="clearfix">
+                    <div id="profile-header">
+                        <h2>Profile Picture</h2>
+                    </div>
+                    <div id="profile-image">
+                        {% if user.image %}
+                        <img class="profile-pic" src="{{user.profile.image.url}}">
+                            {{pform.image}}
+                        {%else%}
+                            <img class="profile-pic" src="{% static 'images/nopic.jpg'%}">
+                            {{pform.image}}
+                        {%endif%}
+                    </div>
+                    <div id="profile-name">
+                        <h2>{{user.last_name}}, {{user.first_name}}, {{user.middle_name}}</h2> 
+                        
+
+                    </div>
+                    <div id="edit-btn">
+                        <input id="save-btn" type="submit" value="Save"/>
+                    </div>
+                </div>
+
+                <div id="name-wrapper">
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Last Name:</b></label>
+                        </div>
+                        <div>
+                            <p>{{form.last_name}}</p>
+                        </div>
+                    </div>
+
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>First Name:</b></label>
+                        </div>
+                        <div>
+                            <p>{{form.first_name}}</p>
+                        </div>
+                    </div>
+
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Middle Name:</b></label>
+                        </div>
+                        <div>
+                            <p> {{form.middle_name}}</p>
+                        </div>
+                    </div>
+
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Birth Date:</b></label>
+                        </div>
+                        <div>
+                            <p>{{form_p.birth_date}}</p>
+                        </div>
+                    </div>
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Birth Date:</b></label>
+                        </div>
+                        <div>
+                            <p>{{form_p.age}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="name-wrapper">
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Email:</b></label>
+                        </div>
+                        <div class="form-control">
+                            <p>{{user.email}}</p>
+                        </div>
+                    </div>
+
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Contact number:</b></label>
+                        </div>
+                        <div>
+                            <p>{{form.contact_no}}</p>
+                        </div>
+                    </div>
+
+
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Lot:</b></label>
+                        </div>
+                        <div id="name-content">
+                            <p>{{form_p.lot}}</p>
+                        </div>
+                    </div>
+    
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Street:</b></label>
+                        </div>
+                        <div id="name-content">
+                            <p>{{form_p.street}}</p>
+                        </div>
+                    </div>
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Village:</b></label>
+                        </div>
+                        <div id="name-content">
+                            <p>{{form_p.village}}</p>
+                        </div>
+                    </div>
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>City:</b></label>
+                        </div>
+                        <div id="name-content">
+                            <p>{{form_p.city}}</p>
+                        </div>
+                    </div>
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Zipcode:</b></label>
+                        </div>
+                        <div id="name-content">
+                            <p>{{form_p.zipcode}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="name-wrapper">
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Parent or Guardian:</b></label>
+                        </div>
+                        <div>
+                            <p>{{form_p.parent}}</p>
+                        </div>
+                    </div>
+
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Parent Contact number:</b></label>
+                        </div>
+                        <div>
+                            <p>{{form_p.parent_contactNo}}</p>
+                        </div>
+                    </div>
+
+                    <div id="content-wrapper">
+                        <div id="name-label">
+                            <label><b>Parent Address:</b></label>
+                        </div>
+                        <div">
+                            <p>{{form_p.parent_address}}</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+{%endblock%}

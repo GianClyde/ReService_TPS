@@ -1,0 +1,73 @@
+
+#stdnt-profile-fillup-mainwrapper{
+    width: 100%;
+    min-height: 565px;
+    padding-top: 5%;
+}
+#stdnt-profile-form{
+    width:90%;
+    min-height: 500px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    margin-left: 5%;
+    padding: 3%;
+}
+#stdnt-form-content1{
+    width: 100%;
+}
+#stdnt-main-header{
+    font-family: 'Signika';
+    font-size: 18px;
+    text-align: center;
+    color: #001c69;
+    font-weight: bold;
+}
+#stdnt-profile-form-field-label{
+    font-family: 'Signika';
+    font-size: 12px;
+    color:  #deaf39;
+}
+#stdnt-sub-header{
+    font-family: 'Signika';
+    font-size: 15px;
+    color: #001c69;
+}
+#stdnt-form-content1{
+    display: inline;
+    width: 100%;
+}
+.form-input-add{
+    width: 20%;
+    min-height: 20px;
+    border: solid #001c69;
+    border-width: 3px;
+    margin-left: 3%;
+    border-radius: 20px;
+    font-size: 11px;
+}
+.form-input-add2{
+    width: 35%;
+    min-height: 20px;
+    border: solid #001c69;
+    border-width: 3px;
+    margin-left: 3%;
+    border-radius: 20px;
+    font-size: 11px;
+}
+#stdnt-form-content3{
+    width: 100%;
+}
+
+@media screen and (min-width:1000px){
+    
+    #stdnt-form-content1{
+        margin-left: 10%;
+    }
+    #stdnt-form-content2{
+            margin-left: 7%;
+        }
+    #stdnt-form-content3{
+            margin-left: 7%;
+        }
+}

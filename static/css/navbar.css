@@ -1,0 +1,70 @@
+#main-logo-wrapper{
+    width: 100%;
+    background-color: #001c69;
+    padding: 3%;
+}
+#imc-logo-nav-wrapper{
+    width: 45%;
+}
+#imc_logo{
+    width: 100%;
+    min-height: 50px;
+}
+#nav-btn-wrapper{
+    background-color: #deaf39;
+    min-height: 30px;
+    width: 100%;
+
+
+}
+#nav-btns{
+    display: inline;
+    float: right;
+    margin-right: 1%;
+    min-height: 30px;
+    width: 100%;
+}
+#nav-btn-labels{
+    font-family: Arial;
+    color: white;
+    margin-left: 3%;
+    font-size: 12px;
+    
+}
+
+@media screen and (min-width:1000px){
+    .dropbtn {
+        font-size: 10px;
+    }
+    #nav-btn-labels{
+        font-size: 10px;
+        
+    }
+    #nav-btn-wrapper{
+        padding-bottom: 1%;
+        padding-top: 0;
+        min-height:20px;
+    
+    }
+    #nav-btns{
+        min-height: 20px;
+        width: 100%;
+
+    }
+    .dropdown {
+        padding-bottom: 3%;
+        min-height: 30px;
+      }
+    #imc_logo{
+        width: 100%;
+        min-height: 30px;
+    }
+    #imc-logo-nav-wrapper{
+        width: 15%;
+    }
+    #main-logo-wrapper{
+        padding: 1%;
+    }
+
+
+}

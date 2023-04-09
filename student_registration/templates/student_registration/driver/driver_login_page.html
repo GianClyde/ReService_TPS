@@ -1,0 +1,60 @@
+{%extends 'main.html'%}
+
+{%block content%}
+{%load static%}
+{%if page == 'driver_login'%}
+    <div id="driver-login-main-wrapper" class="clearfix">
+        <div id="driver-left-wrapper">
+            <img id="driver-loginpage-img" src="{% static 'images/skulbas.png'%}" >
+            <p id="driver-loginpage-img-text">Manage Payments and Services
+        </div>
+        <div id="driver-right-wrapper">
+            <img id="driver-bus-logo-login-icon" src="{% static 'images/buslogo.png'%}">
+            <h2 id="driver-loginForm-header-text">Driver Log in</h2>
+            <p id="driver-loginForm-header-subtext">Your  data  is  treated  with  utmost<br> confidentialllity</p>
+
+            <form method="POST" action="">
+                {%csrf_token%}
+                <input id="form-field" type="text" name="email" placeholder="Email"/><br>
+                <input id="form-field" type="password" name="password1" placeholder="Password"/><br>
+
+                <input id="login-page-btn" type="submit" value="Login"/>
+                <br>
+                <a href="{%url 'password_reset'%}" id="forgotpass-text">Forgot Password</a><br><br>
+            </form>
+            <p id="signup-prompt">Not yet a member? Click here to <a href="{%url 'driver-register'%}">sign-up</a></p>
+        </div>
+    </div>
+{%elif page == 'driver_register'%}
+<div id="driver-register-main-wrapper">
+    <div id="driver-form-wrapper">
+        <h2 id="driver-main-regform-header">Registration Form</h2>
+        <hr>
+    <form method="POST" action="">
+        {%csrf_token%}
+        <div id="driver-content1-regform">
+            <label id="form-label">Email:</label><br>
+            {{form.email}}<br>
+            <label id="form-label">Password:</label><br>
+            {{form.password1}}<br>
+            <label id="form-label">Confirm Password:</label><br>
+            {{form.password2}}<br>
+            <label id="form-label">Last Name:</label><br>
+            {{form.last_name}}<br>
+            <label id="form-label">First Name:</label><br>
+            {{form.first_name}}<br>
+            <label id="form-label">Middle Name:</label><br>
+            {{form.middle_name}}<br>
+            <label id="form-label">Middle Name:</label><br>
+            {{form.contact_no}}<br>
+        </div>
+            <input id="login-page-btn"  type="submit" value="Submit"/>
+    </form>
+    </div>
+</div>
+
+
+
+
+{%endif%}
+{%endblock%}

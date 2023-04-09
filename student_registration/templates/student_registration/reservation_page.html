@@ -1,0 +1,20 @@
+{%extends 'main.html'%}
+
+{%block content%}
+{%load static%}
+<div>
+    
+        {%for d in drivers%}
+            <a href="{% url 'driver-info-reservation' d.id %}"><div class="reservation_card">
+                <img src="img_avatar.png" alt="Avatar" style="width:100%">
+                <div class="reservation_container">
+                <h4><b>{{d.last_name}}</b></h4>
+                <p>Architect & Engineer</p>
+                </div>
+            </div></a>
+        {%endfor%}
+
+</div>
+
+
+{%endblock%}

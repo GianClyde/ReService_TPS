@@ -1,0 +1,89 @@
+{%extends 'main.html'%}
+
+
+{%block content%}
+{%load static%}
+
+<div id="stdnt-profilepg-main-wrapper" class="clearfix">
+    <div id="profilepg-left-wrapper">
+        <div id="LW-header">
+            <h2 id="reservice-text-hdr">ReService</h2><h2 id="account-text-hdr">Account</h2>
+        </div>
+        <div id="LW-sidebar-wrapper" >
+            <a href="{%url 'driver-profile' request.user.id%}"><div id="LW-nav-btn" class="clearfix"  style="border-bottom: solid white; border-width: 1px;">
+                <div id="LW-navbtn-icon-wrapper">
+                    <img id="LW-navbtn-icon" src="{% static 'images/personalinf-icon.png' %}" />
+                </div>
+                <div id="LW-navbtn-text-wrapper">
+                    <h2 id="LW-navbtn-text">Personal Information</h2>
+                </div>
+
+            </div></a>
+            <a href="{%url 'driver-security' request.user.id%}"> <div id="LW-nav-btn" class="clearfix" >
+                <div id="LW-navbtn-icon-wrapper">
+                    <img id="LW-navbtn-icon" src="{% static 'images/security-icon.png' %}" />
+                </div>
+                <div id="LW-navbtn-text-wrapper">
+                    <h2 id="LW-navbtn-text">Security Settings</h2>
+                </div>
+
+            </div></a>
+            <div id="LW-nav-btn" class="clearfix" >
+                <div id="LW-navbtn-icon-wrapper">
+                    <img id="LW-navbtn-icon" src="{% static 'images/bus-icon.png' %}"/>
+                </div>
+                <div id="LW-navbtn-text-wrapper">
+                    <h2 id="LW-navbtn-text">Service Details</h2>
+                </div>
+
+            </div>
+            <div id="LW-nav-btn" class="clearfix">
+                <div id="LW-navbtn-icon-wrapper">
+                    <img id="LW-navbtn-icon" src="{% static 'images/payment-icon.png' %}"/>
+                </div>
+                <div id="LW-navbtn-text-wrapper">
+                    <h2 id="LW-navbtn-text">Payments</h2>
+                </div>
+
+            </div>
+            <div id="LW-nav-btn" class="clearfix" sty;e="border-bottom: solid white;">
+                <div id="LW-navbtn-icon-wrapper">
+                    <img id="LW-navbtn-icon" src="{% static 'images/about-icon.png' %}"/>
+                </div>
+                <div id="LW-navbtn-text-wrapper">
+                    <h2 id="LW-navbtn-text">About</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="profilepg-right-wrapper" >
+        <div id="security-account-content1" >
+            <h2 id="RW-profile-subheader" >Account</h2>
+            <label id="profile-label" style="display: inline;">Email:</label>
+            <div id="proile-content-wrapper" style="display: inline;">
+                {{request.user.email}}
+            </div><br>
+            <label id="profile-label" style="display: inline;">Contact No:</label>
+            <div id="proile-content-wrapper" style="display: inline;">
+                {{request.user.contact_no}}
+            </div>
+        </div>
+        <hr>
+        <div id="security-account-content1" >
+            <h2 id="RW-profile-subheader" >Login Activity</h2>
+            <label id="profile-label" style="display: inline;">Last login:</label>
+            <div id="proile-content-wrapper" style="display: inline;">
+                {{request.user.last_login}}
+            </div><br>
+            <div id="proile-content-wrapper" style="display: inline;">
+                <a href="">View Login History</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+{%endblock%}

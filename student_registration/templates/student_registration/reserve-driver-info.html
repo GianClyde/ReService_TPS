@@ -1,0 +1,14 @@
+{%extends 'main.html'%}
+
+
+{%block content%}
+<div>
+     Last Name:{{driver.email}}
+    <a href="{% url 'reserve-service' driver.id%}">Reserve</a>
+    {{reservation.status}}
+    {{reservation.driver}}
+    
+</div>
+
+
+{%endblock content%}
